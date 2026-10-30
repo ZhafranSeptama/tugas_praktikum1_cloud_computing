@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil | Zhafran Septama Putra Rinaldi</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0284c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .typing-effect {
+            border-right: 2px solid var(--accent);
+            white-space: nowrap;
+            overflow: hidden;
+            margin: 0 auto;
+            display: inline-block;
+        }
+
+        /* Navigation Tabs */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            border: 2px solid transparent;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            border-color: var(--accent);
+        }
+
+        .tab-btn.active {
+            background-color: var(--accent);
+            color: #fff;
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: none;
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            animation: slideUp 0.5s ease-out;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .content-section h2 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Grid Layouts for Content */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: #0f172a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #334155;
+        }
+
+        .card h3 {
+            color: #e2e8f0;
+            margin-bottom: 0.5rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background-color: #334155;
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            color: var(--text-muted);
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Zhafran Septama Putra Rinaldi</h1>
+            <p id="typewriter" class="typing-effect"></p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">📍 Bekasi, Indonesia</p>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="tabs">
+            <button class="tab-btn active" onclick="openTab('profil')">Profil & Edukasi</button>
+            <button class="tab-btn" onclick="openTab('keahlian')">Keahlian Teknis</button>
+            <button class="tab-btn" onclick="openTab('proyek')">Portofolio Proyek</button>
+            <button class="tab-btn" onclick="openTab('minat')">Minat & Hobi</button>
+        </nav>
+
+        <!-- Section 1: Profil -->
+        <section id="profil" class="content-section active">
+            <h2>Profil & Edukasi</h2>
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+                Pengembang perangkat lunak dan sistem yang berfokus pada <i>full-stack web development</i>, manajemen basis data, <i>software quality testing</i>, dan analitik data. Selalu antusias mengeksplorasi teknologi baru mulai dari arsitektur jaringan hingga implementasi <i>machine learning</i>.
+            </p>
+            <div class="card">
+                <h3>Universitas Telkom (Kampus Jakarta)</h3>
+                <p>S1 Sistem Informasi (Kelas SI2404)</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">NIM: 102042400063</p>
+            </div>
+            <div class="card" style="margin-top: 1rem;">
+                <h3>Sertifikasi & Program</h3>
+                <ul>
+                    <li>Google Cloud Arcade Facilitator (Google Cloud Skills Boost)</li>
+                    <li>IBM Generative AI Certification</li>
+                    <li>Microsoft Learn (AI & Machine Learning Badges)</li>
+                    <li>IDCamp Scholarship (Dicoding)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 2: Keahlian -->
+        <section id="keahlian" class="content-section">
+            <h2>Keahlian Teknis</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Web Development</h3>
+                    <div class="tags">
+                        <span class="tag">Laravel (PHP)</span>
+                        <span class="tag">ReactJS</span>
+                        <span class="tag">Vue 3</span>
+                        <span class="tag">HTML/CSS/JS</span>
+                        <span class="tag">Socket.io</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Data & Analytics</h3>
+                    <div class="tags">
+                        <span class="tag">Pentaho Data Integration</span>
+                        <span class="tag">Tableau</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Machine Learning</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Sistem & Jaringan</h3>
+                    <div class="tags">
+                        <span class="tag">Linux (Rocky/Kali)</span>
+                        <span class="tag">BASH Scripting</span>
+                        <span class="tag">VMware VirtualBox</span>
+                        <span class="tag">Cisco Networking (VLAN)</span>
+                        <span class="tag">OpenVAS</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Tools & QA</h3>
+                    <div class="tags">
+                        <span class="tag">Visual Studio Code</span>
+                        <span class="tag">Selenium IDE</span>
+                        <span class="tag">Black Box Testing</span>
+                        <span class="tag">Langflow</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Proyek -->
+        <section id="proyek" class="content-section">
+            <h2>Portofolio Proyek</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>GreenCare</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Sistem pemantauan perawatan tanaman dan pohon berbasis web dengan autentikasi berbasis peran.</p>
+                    <div class="tags"><span class="tag">Laravel</span><span class="tag">ReactJS</span></div>
+                </div>
+                <div class="card">
+                    <h3>KopiKlik (Alumni Coffee)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Aplikasi pemesanan dan manajemen inventaris kedai kopi (dilengkapi dengan Software Testing Plan via Selenium IDE).</p>
+                    <div class="tags"><span class="tag">Laravel</span><span class="tag">ReactJS</span></div>
+                </div>
+                <div class="card">
+                    <h3>N30N ST0R3</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Platform e-commerce elektronik dengan integrasi fitur <i>live chat real-time</i>.</p>
+                    <div class="tags"><span class="tag">Vue 3</span><span class="tag">Socket.io</span></div>
+                </div>
+                <div class="card">
+                    <h3>E-Commerce Review Analytics</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Aplikasi machine learning untuk menganalisis ulasan pelanggan.</p>
+                    <div class="tags"><span class="tag">Langflow</span><span class="tag">Gemini API</span></div>
+                </div>
+                <div class="card">
+                    <h3>Dashboard Tableau HR & Kesehatan</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Dashboard interaktif untuk mengelola stres rumah sakit, kualitas tidur, dan atrisi SDM menggunakan skema Star dan ETL.</p>
+                    <div class="tags"><span class="tag">Tableau</span><span class="tag">Pentaho</span></div>
+                </div>
+                <div class="card">
+                    <h3>Sistem Booking Ruangan Kampus</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Integrasi jadwal kelas dan ruang rapat untuk Universitas ABC.</p>
+                    <div class="tags"><span class="tag">Web App</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Minat -->
+        <section id="minat" class="content-section">
+            <h2>Minat & Gaya Hidup</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Kebugaran & Diet</h3>
+                    <p style="color: var(--text-muted);">Menjaga rutinitas lari <i>outdoor</i>, <i>push-up</i>, dan <i>squat</i>. Menerapkan diet tinggi protein (telur, unggas, ikan) tanpa produk susu dan kacang-kacangan.</p>
+                </div>
+                <div class="card">
+                    <h3>Musik & Hiburan</h3>
+                    <p style="color: var(--text-muted);">Penggemar K-Pop (BABYMONSTER, IVE, TWICE, NewJeans, BTS) dan musik R&B/Soul 90-an (Sade, Aaliyah, Mary J. Blige). Menikmati film dengan format IMAX.</p>
+                </div>
+                <div class="card">
+                    <h3>Gaming</h3>
+                    <p style="color: var(--text-muted);">Bermain game di PC seperti Valorant, Roblox Driving Empire, dan <i>Keep Talking and Nobody Explodes</i>.</p>
+                </div>
+                <div class="card">
+                    <h3>Lain-lain</h3>
+                    <p style="color: var(--text-muted);">Belajar dasar bahasa Korea (Hangul). Penikmat kopi lokal Jakarta Selatan (Tuku, Fore, Kopi Kenangan). Sering bepergian Jakarta-Bandung menggunakan kereta cepat Whoosh.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Tab Navigation Logic
+        function openTab(tabId) {
+            // Remove active class from all buttons and sections
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding section
+            event.target.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // Typewriter Effect for the subtitle
+        const roles = [
+            "Software & Systems Developer", 
+            "Full-Stack Engineer (Laravel/React)", 
+            "Data & Network Enthusiast"
+        ];
+        
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typeWriterElement = document.getElementById("typewriter");
+
+        function typeWriter() {
+            const currentRole = roles[roleIndex];
+            
+            if (isDeleting) {
+                typeWriterElement.innerHTML = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typeWriterElement.innerHTML = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                typeSpeed = 2000; // Pause at the end of word
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typeSpeed = 500; // Pause before typing next word
+            }
+
+            setTimeout(typeWriter, typeSpeed);
+        }
+
+        // Initialize typewriter on load
+        window.onload = function() {
+            typeWriter();
+        };
+    </script>
+</body>
+</html>
